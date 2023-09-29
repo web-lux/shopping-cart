@@ -1,3 +1,27 @@
+@font-face {
+	font-family: "Bebas Neue";
+	font-style: normal;
+	font-weight: normal;
+	src: local("BebasNueue-Regular"),
+		url("./assets/fonts/BebasNeue-Regular.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "Gotham";
+	font-style: normal;
+	font-weight: normal;
+	src: local("GothamBook"),
+		url("./assets/fonts/GothamBook.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "Gotham";
+	font-style: normal;
+	font-weight: bold;
+	src: local("GothamBold"),
+		url("./assets/fonts/GothamBold.ttf") format("truetype");
+}
+
 * {
 	box-sizing: border-box;
 	padding: 0;
