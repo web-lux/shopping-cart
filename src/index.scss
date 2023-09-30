@@ -22,15 +22,81 @@
 		url("./assets/fonts/GothamBold.ttf") format("truetype");
 }
 
+:root {
+	--black: #121212;
+	--red: #9e1e1b;
+	--white: #ece7e4;
+	--grey: #807f7b;
+	--text: "Gotham";
+	--title: "Bebas Neue";
+}
+
 * {
 	box-sizing: border-box;
 	padding: 0;
 	margin: 0;
 }
 
-:root {
-	--black: #121212;
-	--red: #9e1e1b;
-	--white: #ece7e4;
-	--grey: #807f7b;
+ul li {
+	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+	font-weight: bold;
+}
+
+p,
+a,
+span,
+label,
+button,
+input[type="email"] {
+	font-family: var(--text);
+}
+
+p,
+a,
+span,
+label {
+	color: var(--white);
+}
+
+header.navigation {
+	background-color: var(--black);
+	padding: 20px 40px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+	flex-wrap: wrap;
+
+	nav {
+		flex-basis: 485px;
+
+		ul {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			gap: 10px;
+		}
+	}
+
+	.icons {
+		display: flex;
+		gap: 20px;
+	}
+
+	@media screen and (max-width: 768px) {
+		&,
+		nav ul {
+			flex-direction: column;
+		}
+
+		nav {
+			flex-basis: 0;
+			text-align: center;
+		}
+	}
 }

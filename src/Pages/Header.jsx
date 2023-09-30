@@ -3,20 +3,36 @@ import { Link } from "react-router-dom";
 export default function Header() {
 
     return (
-      <header>
-        <nav>
-          <ul>
-            <li><Link to="/">Accueil</Link></li>
-            <li><Link to="/">Nos produits</Link></li>
-            <li><Link to="/">Qui sommes nous ?</Link></li>
-            <li><Link to="/">F.A.Q</Link></li>
-          </ul>
+      <header className="navigation">
+        <img src="src/assets/runzik.svg" alt="Logo Run'zik" />
 
+        <nav aria-label="Navigation principale">
           <ul>
-            <li><Link to="/cart">Cart</Link></li>
-            <li><Link to="/">Account</Link></li>
+            <li>
+              <Link to="/">Accueil</Link>
+            </li>
+            <li>
+              <Link to="/">Nos produits</Link>
+            </li>
+            <li>
+              <Link to="/">Qui sommes nous ?</Link>
+            </li>
+            <li>
+              <Link to="/">F.A.Q</Link>
+            </li>
           </ul>
         </nav>
+          
+        <div className="icons">
+          <Link to="/cart" aria-label="Panier">
+            <img src="src/assets/basket.svg" alt =""/>
+          </Link>
+
+          <Link to="/" aria-label="Compte">
+            <img src="src/assets/account.svg" alt="" />
+          </Link>
+        </div>
+
       </header>
     )
   }
