@@ -1,0 +1,48 @@
+.navbar {
+	background-color: var(--black);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.navbar .wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+	flex-wrap: wrap;
+
+	@media screen and (max-width: 768px) {
+		flex-direction: column;
+		gap: 30px;
+
+		ul {
+			flex-direction: column;
+		}
+	}
+
+	img {
+		flex-grow: 0;
+		flex-shrink: 0;
+	}
+
+	nav {
+		margin: auto;
+		flex: 1;
+		justify-content: center;
+		align-items: center;
+
+		ul {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 30px;
+			text-align: center;
+		}
+	}
+
+	.icons {
+		display: flex;
+		gap: 20px;
+	}
+}
