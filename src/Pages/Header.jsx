@@ -6,14 +6,14 @@ export default function Header() {
     return (
       <header className={style.navbar}>
 
-        <div className={style.wrapper + " " + "max-wrapper"}>
+        <div className={style.wrapper + " " + "maxWrapper"}>
 
           <img src="src/assets/runzik.svg" alt="Logo Run'zik" />
 
           <nav aria-label="Navigation principale">
             <ul>
               <li>
-                <Link to="/">Accueil</Link>
+                <Link to="/" className="borderBottom">Accueil</Link>
               </li>
               <li>
                 <Link to="/">Nos produits</Link>

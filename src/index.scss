@@ -62,8 +62,26 @@ label {
 	color: var(--white);
 }
 
-.max-wrapper {
+button,
+input[type="checkbox"] {
+	cursor: pointer;
+}
+
+.maxWrapper {
 	max-width: 1920px;
 	width: 100%;
 	padding: 20px 40px;
+}
+
+.borderBottom {
+	position: relative;
+
+	&::before {
+		content: "";
+		position: absolute;
+		height: 3px;
+		background-color: var(--red);
+		width: 100%;
+		bottom: -6px;
+	}
 }
