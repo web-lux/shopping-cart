@@ -16,10 +16,11 @@ export default function Item() {
                     <span className={style.price} aria-label="Prix de l'article">199 €</span>
                     <div className={style.buttons}>
                         <button className="btn primary">J'ajoute au panier</button>
-                        <button className="btn secondary">En savoir plus</button>
+                        <button className="btn secondary">Détails de l'article</button>
                     </div>
                 
                 </div>
+                
                 <div className={style.image}>
                     <img src="src/assets/payplug.png" alt="Image de l'article" />
                 </div>
