@@ -1,11 +1,13 @@
 import Banner from "./Components/Banner.jsx"
+import Item from "./Components/Item.jsx"
 
 export default function Shop() {
 
     return (
       <>
-        <p>Shop</p>
         <Banner />
+        <Item />
+        <Item />
       </>
     )
   }

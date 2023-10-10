@@ -1,0 +1,78 @@
+/* #region colors even and uneven */
+
+.item {
+	background-color: var(--black);
+
+	strong,
+	p,
+	span {
+		color: var(--white) !important;
+	}
+
+	:global button.secondary {
+		color: var(--white);
+	}
+}
+
+.item:nth-child(even) {
+	background: var(--white);
+
+	strong,
+	p,
+	span {
+		color: var(--black) !important;
+	}
+
+	:global button.secondary {
+		color: var(--black);
+	}
+}
+
+/* #endregion */
+
+.item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.item .wrapper {
+	padding: 60px 100px;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	gap: 40px;
+
+	.main {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 20px;
+
+		strong {
+			font-weight: normal;
+			margin-bottom: 10px;
+		}
+
+		p {
+			max-width: 610px;
+		}
+
+		span.price {
+			font-weight: bold;
+			font-size: 28px;
+		}
+
+		.buttons {
+			display: flex;
+			gap: 25px;
+			margin-top: 10px;
+		}
+	}
+
+	@media screen and (max-width: 1024px) {
+		flex-direction: column-reverse;
+		padding: 60px 40px;
+	}
+}
