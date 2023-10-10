@@ -53,6 +53,7 @@ label,
 button,
 input[type="email"] {
 	font-family: var(--text);
+	font-size: 16px;
 }
 
 p,
@@ -60,6 +61,7 @@ a,
 span,
 label {
 	color: var(--white);
+	line-height: 150%;
 }
 
 button,
@@ -83,5 +85,31 @@ input[type="checkbox"] {
 		background-color: var(--red);
 		width: 100%;
 		bottom: -6px;
+	}
+}
+
+.title {
+	font-family: var(--title), sans-serif;
+	font-size: 50px;
+}
+
+button {
+	border: none;
+	appearance: none;
+	background: none;
+	background-color: none;
+}
+
+.btn {
+	padding: 8px 12px;
+	font-weight: bold;
+
+	&.primary {
+		background-color: var(--red);
+		color: var(--white);
+	}
+
+	&.secondary {
+		border: solid 1px var(--red);
 	}
 }
