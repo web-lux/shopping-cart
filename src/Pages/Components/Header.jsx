@@ -28,8 +28,9 @@ export default function Header() {
           </nav>
           
           <div className={style.icons}>
-            <Link to="/cart" aria-label="Panier">
-              <img src="/src/assets/basket.svg" alt ="Panier"/>
+            <Link to="/cart" aria-label="Panier" className={style.cart}>
+              <div className={style.cartNumber}>0</div>
+              <img src="/src/assets/basket.svg" alt="Panier" />
             </Link>
             <Link to="/" aria-label="Compte">
               <img src="/src/assets/account.svg" alt="Compte" />
