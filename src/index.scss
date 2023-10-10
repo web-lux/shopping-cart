@@ -7,19 +7,19 @@
 }
 
 @font-face {
-	font-family: "Gotham";
+	font-family: "Montserrat";
 	font-style: normal;
 	font-weight: normal;
-	src: local("GothamBook"),
-		url("./assets/fonts/GothamBook.ttf") format("truetype");
+	src: local("Montserrat-Regular"),
+		url("./assets/fonts/MontserratRegular.otf") format("opentype");
 }
 
 @font-face {
-	font-family: "Gotham";
+	font-family: "Montserrat";
 	font-style: normal;
 	font-weight: bold;
-	src: local("GothamBold"),
-		url("./assets/fonts/GothamBold.ttf") format("truetype");
+	src: local("Montserrat-Bold"),
+		url("./assets/fonts/MontserratBold.otf") format("opentype");
 }
 
 :root {
@@ -27,7 +27,7 @@
 	--red: #9e1e1b;
 	--white: #e6e6e6;
 	--grey: #807f7b;
-	--text: "Gotham";
+	--text: "Montserrat";
 	--title: "Bebas Neue";
 }
 
