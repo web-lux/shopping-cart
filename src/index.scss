@@ -46,6 +46,11 @@ a {
 	font-weight: bold;
 }
 
+h1,
+h2 {
+	font-weight: normal;
+}
+
 p,
 a,
 span,
@@ -112,4 +117,14 @@ button {
 	&.secondary {
 		border: solid 1px var(--red);
 	}
+}
+
+.btnQuantity {
+	background-color: var(--grey);
+	height: 25px;
+	width: 25px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: bold;
 }
