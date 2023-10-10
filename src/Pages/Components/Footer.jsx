@@ -54,23 +54,23 @@ export default function Footer() {
                 <ul>
                   <li>
                     <Link to="/">
-                    <img src="src/assets/pinterest.svg" alt="Logo Pinterest" />
+                    <img src="/src/assets/pinterest.svg" alt="Logo Pinterest" />
                     </Link>
                   </li>
                   <li>
                     <Link to="/">
-                      <img src="src/assets/twitter.svg" alt="Logo Twitter" />
+                      <img src="/src/assets/twitter.svg" alt="Logo Twitter" />
                     </Link>
                   </li>
                   <li>
                     <Link to="/">
-                      <img src="src/assets/facebook.svg" alt="Logo Facebook" />
+                      <img src="/src/assets/facebook.svg" alt="Logo Facebook" />
                     </Link>
                   </li>
                 </ul>
               </nav>
             </div>
-            <img src="src/assets/payplug.png" alt="Logo PayPlug qui garantie un paiement sécurisé" />
+            <img src="/src/assets/payplug.png" alt="Logo PayPlug qui garantie un paiement sécurisé" />
           </section>
           
         </div>

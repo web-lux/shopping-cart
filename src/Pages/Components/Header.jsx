@@ -8,7 +8,7 @@ export default function Header() {
 
         <div className={style.wrapper + " " + "maxWrapper"}>
 
-          <img src="src/assets/runzik.svg" alt="Logo Run'zik" />
+          <img src="/src/assets/runzik.svg" alt="Logo Run'zik" />
 
           <nav aria-label="Navigation principale">
             <ul>
@@ -29,10 +29,10 @@ export default function Header() {
           
           <div className={style.icons}>
             <Link to="/cart" aria-label="Panier">
-              <img src="src/assets/basket.svg" alt =""/>
+              <img src="/src/assets/basket.svg" alt ="Panier"/>
             </Link>
             <Link to="/" aria-label="Compte">
-              <img src="src/assets/account.svg" alt="" />
+              <img src="/src/assets/account.svg" alt="Compte" />
             </Link>
           </div>
 
