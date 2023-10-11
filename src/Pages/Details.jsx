@@ -1,9 +1,12 @@
 import style from "./Details.module.scss"
 
-import { useParams } from "react-router-dom";
+import { useOutletContext, useParams } from "react-router-dom";
 
 export default function Details() {
-    const { item } = useParams();
+    const products = useOutletContext();
+    const { id } = useParams();
+    const filteredProducts = products.filter(el => el.id == id);
+    const product = filteredProducts[0];
 
     return (
         <main>
@@ -12,12 +15,12 @@ export default function Details() {
 
                 <div className={"maxWrapper" + " " + style.main}>
 
-                    <img src="/src/assets/payplug.png" alt="" />
+                    <img src={product.image} alt="" />
                     
                     <div className={style.infos}>
                         <div>
-                            <h1 className="title">Montre Run'Zik S Plus</h1>
-                            <span aria-label="Prix de l'article" className={style.price}>299€</span>
+                            <h1 className="title">{product.title}</h1>
+                            <span aria-label="Prix de l'article" className={style.price}>{product.price}€</span>
                         </div>
                         <form action="POST">
                             <label htmlFor="quantity">Quantité</label>

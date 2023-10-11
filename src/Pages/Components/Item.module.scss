@@ -9,7 +9,7 @@
 		color: var(--white) !important;
 	}
 
-	:global button.secondary {
+	:global a.secondary {
 		color: var(--white);
 	}
 }
@@ -23,7 +23,7 @@
 		color: var(--black) !important;
 	}
 
-	:global button.secondary {
+	:global a.secondary {
 		color: var(--black);
 	}
 }

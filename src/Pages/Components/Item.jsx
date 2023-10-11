@@ -1,6 +1,8 @@
-import style from "./Item.module.scss"
+import style from "./Item.module.scss";
+import { Link } from "react-router-dom";
 
-export default function Item({product}) {
+export default function Item({ product }) {
+
     return (
         <section className={style.item}>
 
@@ -14,7 +16,7 @@ export default function Item({product}) {
                     <span className={style.price} aria-label="Prix de l'article">{product.price}€</span>
                     <div className={style.buttons}>
                         <button className="btn primary">J'ajoute au panier</button>
-                        <button className="btn secondary">Détails de l'article</button>
+                        <Link className="btn secondary" to={`/details/${product.id}`}>Détails de l'article</Link>
                     </div>
                 
                 </div>
