@@ -38,6 +38,10 @@ export default function Root() {
     fetch("https://fakestoreapi.com/products?limit=2", { mode: "cors" })
       .then((res) => res.json())
       .then((res) => setProducts(res))
+      .catch((err) => {
+        console.error(err);
+        alert("Une erreur s'est produite, merci de réessayer.")
+      })
   }, []) 
 
   return (
