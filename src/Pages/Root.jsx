@@ -43,7 +43,7 @@ export default function Root() {
   return (
     <>
       <Header />
-      <Outlet context={products} />
+      <Outlet context={{products}} />
       <Footer />
     </>
   )

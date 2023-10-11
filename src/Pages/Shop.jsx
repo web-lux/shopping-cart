@@ -3,7 +3,7 @@ import Banner from "./Components/Banner.jsx"
 import Item from "./Components/Item.jsx"
 
 export default function Shop() {
-  const products = useOutletContext();
+  const { products } = useOutletContext();
   
   const productsList = products.map(product => {
     return (

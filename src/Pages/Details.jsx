@@ -3,7 +3,7 @@ import style from "./Details.module.scss"
 import { useOutletContext, useParams } from "react-router-dom";
 
 export default function Details() {
-    const products = useOutletContext();
+    const { products } = useOutletContext();
     const { id } = useParams();
     const filteredProducts = products.filter(el => el.id == id);
     const product = filteredProducts[0];
@@ -29,7 +29,7 @@ export default function Details() {
                                 <input type="text" id="quantity" placeholder="1"/>
                                 <button className="btnQuantity" type="button">+</button>
                             </div>
-                            <button type="submit" className="btn primary">J'ajoute au panier</button>
+                            <button type="button" className="btn primary">J'ajoute au panier</button>
                         </form>
                     </div>
                     
