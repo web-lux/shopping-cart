@@ -33,6 +33,7 @@ export default function Root() {
 ]
 
   const [products, setProducts] = useState(placeholderArr);
+  const [cart, setCart] = useState([]);
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products?limit=2", { mode: "cors" })
@@ -46,8 +47,8 @@ export default function Root() {
 
   return (
     <>
-      <Header />
-      <Outlet context={{products}} />
+      <Header cart={cart} />
+      <Outlet context={{products, cart, setCart}} />
       <Footer />
     </>
   )

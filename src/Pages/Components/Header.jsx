@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
 import style from "./Header.module.scss";
 
-export default function Header() {
-
+export default function Header({cart}) {
     return (
       <header className={style.navbar}>
 
@@ -29,7 +28,7 @@ export default function Header() {
           
           <div className={style.icons}>
             <Link to="/cart" aria-label="Panier" className={style.cart}>
-              <div className={style.cartNumber}>0</div>
+              <div className={style.cartNumber}>{cart.length}</div>
               <img src="/src/assets/basket.svg" alt="Panier" />
             </Link>
             <Link to="/" aria-label="Compte">
