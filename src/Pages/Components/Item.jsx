@@ -1,7 +1,13 @@
 import style from "./Item.module.scss";
 import { Link } from "react-router-dom";
 
-export default function Item({ product }) {
+export default function Item({ product, setCart, cart }) {
+
+    function addToCart() {
+        if (!cart.includes(product)) {
+            setCart([...cart, product]);
+        } else return
+    }
 
     return (
         <section className={style.item}>
@@ -15,7 +21,7 @@ export default function Item({ product }) {
                     </p>
                     <span className={style.price} aria-label="Prix de l'article">{product.price}€</span>
                     <div className={style.buttons}>
-                        <button className="btn primary">J'ajoute au panier</button>
+                        <button className="btn primary" onClick={addToCart}>J'ajoute au panier</button>
                         <Link className="btn secondary" to={`/details/${product.id}`}>Détails de l'article</Link>
                     </div>
                 
