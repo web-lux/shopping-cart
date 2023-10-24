@@ -1,3 +1,4 @@
+import { useState } from "react";
 import style from "./Details.module.scss"
 
 import { redirect, useOutletContext, useParams } from "react-router-dom";
@@ -11,6 +12,18 @@ export default function Details() {
     } 
 
     const product = products.find(item => item.id == id);
+
+    const [quantity, setQuantity] = useState(1)
+
+    function increase() {
+        setQuantity(quantity + 1)
+    }
+
+    function decrease() {
+        if (quantity > 0) {
+            setQuantity(quantity - 1)
+        }
+    }
 
     return (
         <main>
@@ -29,9 +42,9 @@ export default function Details() {
                         <form action="POST">
                             <label htmlFor="quantity">Quantité</label>
                             <div className={style.buttons}>
-                                <button className="btnQuantity" type="button">-</button>
-                                <input type="text" id="quantity" placeholder="1"/>
-                                <button className="btnQuantity" type="button">+</button>
+                                <button className="btnQuantity" type="button" onClick={decrease}>-</button>
+                                <input type="text" id="quantity" value={quantity} onChange={(e) => setQuantity(e.target.value)}/>
+                                <button className="btnQuantity" type="button" onClick={increase}>+</button>
                             </div>
                             <button type="button" className="btn primary">J'ajoute au panier</button>
                         </form>
