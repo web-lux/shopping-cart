@@ -1,12 +1,16 @@
 import style from "./Details.module.scss"
 
-import { useOutletContext, useParams } from "react-router-dom";
+import { redirect, useOutletContext, useParams } from "react-router-dom";
 
 export default function Details() {
     const { products } = useOutletContext();
     const { id } = useParams();
-    const filteredProducts = products.filter(el => el.id == id);
-    const product = filteredProducts[0];
+    
+    if (!products.some(item => item.id == id)) {
+        return redirect("404")
+    } 
+
+    const product = products.find(item => item.id == id);
 
     return (
         <main>
