@@ -4,8 +4,14 @@ import { Link } from "react-router-dom";
 export default function Item({ product, setCart, cart }) {
 
     function addToCart() {
-        if (!cart.includes(product)) {
-            setCart([...cart, product]);
+        if (!cart.some(item => item.id === product.id)) {
+            setCart([...cart, {
+                quantity: 1,
+                id: product.id,
+                title: product.title,
+                price: product.price,
+                image: product.image
+            }]);
         } else return
     }
 
