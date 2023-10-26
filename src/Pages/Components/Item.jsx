@@ -7,10 +7,7 @@ export default function Item({ product, setCart, cart }) {
         if (!cart.some(item => item.id === product.id)) {
             setCart([...cart, {
                 quantity: 1,
-                id: product.id,
-                title: product.title,
-                price: product.price,
-                image: product.image
+                ...product
             }]);
         } else return
     }

@@ -4,7 +4,7 @@ import style from "./Details.module.scss"
 import { redirect, useOutletContext, useParams } from "react-router-dom";
 
 export default function Details() {
-    const { products } = useOutletContext();
+    const { products, setCart, cart } = useOutletContext();
     const { id } = useParams();
     
     if (!products.some(item => item.id == id)) {
@@ -16,12 +16,27 @@ export default function Details() {
     const [quantity, setQuantity] = useState(1)
 
     function increase() {
-        setQuantity(quantity + 1)
+        setQuantity(quantity => quantity + 1)
     }
 
     function decrease() {
         if (quantity > 0) {
-            setQuantity(quantity - 1)
+            setQuantity(quantity => quantity - 1)
+        }
+    }
+
+    function addToCart() {
+        if (!cart.some(item => item.id === product.id)) {
+            setCart([...cart, {
+                quantity: quantity,
+                ...product
+            }]);
+        } else {
+            const filteredCart = cart.filter(x => x.id !== product.id);
+            setCart([...filteredCart, {
+                quantity: quantity,
+                ...product
+            }]);
         }
     }
 
@@ -46,7 +61,7 @@ export default function Details() {
                                 <input type="text" id="quantity" value={quantity} onChange={(e) => setQuantity(e.target.value)}/>
                                 <button className="btnQuantity" type="button" onClick={increase}>+</button>
                             </div>
-                            <button type="button" className="btn primary">J'ajoute au panier</button>
+                            <button type="button" className="btn primary" onClick={addToCart}>J'ajoute au panier</button>
                         </form>
                     </div>
                     
