@@ -47,10 +47,14 @@ export default function Root() {
 			});
 	}, []);
 
+	function parsePrice(price) {
+		return parseFloat(price.toFixed(2));
+	}
+
 	return (
 		<>
 			<Header cart={cart} />
-			<Outlet context={{ products, cart, setCart }} />
+			<Outlet context={{ products, cart, setCart, parsePrice }} />
 			<Footer />
 		</>
 	);

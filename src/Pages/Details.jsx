@@ -4,7 +4,7 @@ import style from "./Details.module.scss";
 import { redirect, useOutletContext, useParams } from "react-router-dom";
 
 export default function Details() {
-	const { products, setCart, cart } = useOutletContext();
+	const { products, setCart, cart, parsePrice } = useOutletContext();
 	const { id } = useParams();
 
 	if (!products.some((item) => item.id == id)) {
@@ -56,7 +56,7 @@ export default function Details() {
 						<div>
 							<h1 className="title">{product.title}</h1>
 							<span aria-label="Prix de l'article" className={style.price}>
-								{product.price}€
+								{parsePrice(product.price)}€
 							</span>
 						</div>
 						<form action="POST">

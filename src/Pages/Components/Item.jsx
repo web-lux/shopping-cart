@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useOutletContext } from "react-router-dom";
 
 export default function Item({ product }) {
-	const { setCart, cart } = useOutletContext();
+	const { setCart, cart, parsePrice } = useOutletContext();
 
 	function addToCart() {
 		if (!cart.some((item) => item.id === product.id)) {
@@ -26,7 +26,7 @@ export default function Item({ product }) {
 					</strong>
 					<p aria-label="Description de l'article">{product.description}</p>
 					<span className={style.price} aria-label="Prix de l'article">
-						{product.price}€
+						{parsePrice(product.price)}€
 					</span>
 					<div className={style.buttons}>
 						<button className="btn primary" onClick={addToCart}>

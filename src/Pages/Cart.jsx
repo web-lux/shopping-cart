@@ -2,7 +2,7 @@ import Banner from "./Components/Banner";
 import style from "./Cart.module.scss";
 import { useOutletContext } from "react-router-dom";
 
-function CartRow({ cartItem, cart, setCart, compareId }) {
+function CartRow({ cartItem, cart, setCart, compareId, parsePrice }) {
 
 	function decreaseQuantity() {
 		const filteredCart = cart.filter((item) => item.id !== cartItem.id);
@@ -60,14 +60,14 @@ function CartRow({ cartItem, cart, setCart, compareId }) {
 				</button>
 			</div>
 			<span className={style.itemPrice} aria-label="Prix de l'article">
-				{cartItem.price * cartItem.quantity}€
+				{parsePrice(cartItem.price * cartItem.quantity)}€
 			</span>
 		</li>
 	);
 }
 
 export default function Cart() {
-	const { cart, setCart } = useOutletContext();
+	const { cart, setCart, parsePrice } = useOutletContext();
 
 	function compareId(a, b) {
 		if (a.id < b.id) {
@@ -99,6 +99,7 @@ export default function Cart() {
 									key={cartItem.id}
 									cart={cart}
 									setCart={setCart}
+									parsePrice={parsePrice}
 								/>
 							);
 						})}
@@ -106,7 +107,7 @@ export default function Cart() {
 
 					<div className={style.sum}>
 						<span id="sum-label">Sous-total</span>
-						<span aria-aria-labelledby="sum-label">{total}</span>
+						<span aria-aria-labelledby="sum-label">{parsePrice(total)}€</span>
 					</div>
 
 					<button className={"btn primary" + " " + style.btnNext}>
