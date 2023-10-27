@@ -5,32 +5,48 @@ import { useOutletContext } from "react-router-dom";
 export default function Cart() {
 	const { cart, setCart } = useOutletContext();
 
+	function compareId(a, b) {
+		if (a.id < b.id) {
+			return -1;
+		} else if (a.id > b.id) {
+			return 1;
+		} else {
+			return 0;
+		}
+	}
+
+	setCart(cart.sort(compareId));
+
 	function decreaseQuantity(id) {
 		const filteredCart = cart.filter((x) => x.id !== id);
 		const target = cart.find((x) => x.id == id);
 		if (target.quantity > 1) {
-			setCart([
-				...filteredCart,
-				{
-					quantity: target.quantity--,
-					...target,
-				},
-			]);
+			setCart(
+				[
+					...filteredCart,
+					{
+						quantity: target.quantity--,
+						...target,
+					},
+				].sort(compareId)
+			);
 		} else if ((target.quantity = 1)) {
-			setCart(filteredCart);
+			setCart(filteredCart).sort(compareId);
 		}
 	}
 
 	function increaseQuantity(id) {
 		const filteredCart = cart.filter((x) => x.id !== id);
 		const target = cart.find((x) => x.id == id);
-		setCart([
-			...filteredCart,
-			{
-				quantity: target.quantity++,
-				...target,
-			},
-		]);
+		setCart(
+			[
+				...filteredCart,
+				{
+					quantity: target.quantity++,
+					...target,
+				},
+			].sort(compareId)
+		);
 	}
 
 	const cartList = cart.map((cartItem) => {
