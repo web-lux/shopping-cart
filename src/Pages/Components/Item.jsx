@@ -1,7 +1,10 @@
 import style from "./Item.module.scss";
 import { Link } from "react-router-dom";
+import { useOutletContext } from "react-router-dom";
 
-export default function Item({ product, setCart, cart }) {
+export default function Item({ product }) {
+	const { setCart, cart } = useOutletContext();
+
 	function addToCart() {
 		if (!cart.some((item) => item.id === product.id)) {
 			setCart([
