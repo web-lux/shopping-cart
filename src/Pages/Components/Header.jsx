@@ -1,44 +1,41 @@
 import { Link } from "react-router-dom";
 import style from "./Header.module.scss";
 
-export default function Header({cart}) {
+export default function Header({ cart }) {
+	return (
+		<header className={style.navbar}>
+			<div className={style.wrapper + " " + "maxWrapper"}>
+				<img src="/src/assets/runzik.svg" alt="Logo Run'zik" />
 
-    return (
-      <header className={style.navbar}>
+				<nav aria-label="Navigation principale">
+					<ul>
+						<li>
+							<Link to="/" className="borderBottom">
+								Accueil
+							</Link>
+						</li>
+						<li>
+							<Link to="/">Nos produits</Link>
+						</li>
+						<li>
+							<Link to="/">Qui sommes nous ?</Link>
+						</li>
+						<li>
+							<Link to="/">F.A.Q</Link>
+						</li>
+					</ul>
+				</nav>
 
-        <div className={style.wrapper + " " + "maxWrapper"}>
-
-          <img src="/src/assets/runzik.svg" alt="Logo Run'zik" />
-
-          <nav aria-label="Navigation principale">
-            <ul>
-              <li>
-                <Link to="/" className="borderBottom">Accueil</Link>
-              </li>
-              <li>
-                <Link to="/">Nos produits</Link>
-              </li>
-              <li>
-                <Link to="/">Qui sommes nous ?</Link>
-              </li>
-              <li>
-                <Link to="/">F.A.Q</Link>
-              </li>
-            </ul>
-          </nav>
-          
-          <div className={style.icons}>
-            <Link to="/cart" aria-label="Panier" className={style.cart}>
-              <div className={style.cartNumber}>{cart.length}</div>
-              <img src="/src/assets/basket.svg" alt="Panier" />
-            </Link>
-            <Link to="/" aria-label="Compte">
-              <img src="/src/assets/account.svg" alt="Compte" />
-            </Link>
-          </div>
-
-        </div>
-
-      </header>
-    )
-  }
+				<div className={style.icons}>
+					<Link to="/cart" aria-label="Panier" className={style.cart}>
+						<div className={style.cartNumber}>{cart.length}</div>
+						<img src="/src/assets/basket.svg" alt="Panier" />
+					</Link>
+					<Link to="/" aria-label="Compte">
+						<img src="/src/assets/account.svg" alt="Compte" />
+					</Link>
+				</div>
+			</div>
+		</header>
+	);
+}

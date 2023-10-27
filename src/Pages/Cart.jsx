@@ -3,77 +3,91 @@ import style from "./Cart.module.scss";
 import { useOutletContext } from "react-router-dom";
 
 export default function Cart() {
-  const { cart, setCart } = useOutletContext();
+	const { cart, setCart } = useOutletContext();
 
-  function decreaseQuantity(id) {
-    const filteredCart = cart.filter(x => x.id !== id);
-    const target = cart.find(x => x.id == id);
-    if (target.quantity > 1) {
-    setCart([...filteredCart, {
-      quantity: target.quantity--,
-      ...target
-    }]);
-    } else if (target.quantity = 1) {
-      setCart(filteredCart);
-    }
-  }
+	function decreaseQuantity(id) {
+		const filteredCart = cart.filter((x) => x.id !== id);
+		const target = cart.find((x) => x.id == id);
+		if (target.quantity > 1) {
+			setCart([
+				...filteredCart,
+				{
+					quantity: target.quantity--,
+					...target,
+				},
+			]);
+		} else if ((target.quantity = 1)) {
+			setCart(filteredCart);
+		}
+	}
 
-  function increaseQuantity(id) {
-    const filteredCart = cart.filter(x => x.id !== id);
-    const target = cart.find(x => x.id == id);
-    setCart([...filteredCart, {
-      quantity: target.quantity++,
-      ...target
-    }]);
-  }
+	function increaseQuantity(id) {
+		const filteredCart = cart.filter((x) => x.id !== id);
+		const target = cart.find((x) => x.id == id);
+		setCart([
+			...filteredCart,
+			{
+				quantity: target.quantity++,
+				...target,
+			},
+		]);
+	}
 
+	const cartList = cart.map((cartItem) => {
+		return (
+			<li key={cartItem.id}>
+				<img src="src/assets/payplug.png" alt="" />
+				<span className={style.itemName} aria-label="Nom de l'article">
+					{cartItem.title}
+				</span>
+				<div className={style.itemQuantity}>
+					<button
+						className="btnQuantity"
+						aria-label="Réduire quantité"
+						onClick={() => {
+							decreaseQuantity(cartItem.id);
+						}}
+					>
+						-
+					</button>
+					<span aria-label="Quantité dans le panier">{cartItem.quantity}</span>
+					<button
+						className="btnQuantity"
+						aria-label="Augmenter quantité"
+						onClick={() => {
+							increaseQuantity(cartItem.id);
+						}}
+					>
+						+
+					</button>
+				</div>
+				<span className={style.itemPrice} aria-label="Prix de l'article">
+					{cartItem.price}€
+				</span>
+			</li>
+		);
+	});
 
-  const cartList = cart.map(cartItem => {
-    return (
-      <li key={cartItem.id}>
-        <img src="src/assets/payplug.png" alt="" />
-        <span className={style.itemName} aria-label="Nom de l'article">{cartItem.title}</span>
-        <div className={style.itemQuantity}>
-          <button className="btnQuantity" aria-label="Réduire quantité" onClick={() => {
-            decreaseQuantity(cartItem.id)
-          }}>-</button>
-          <span aria-label="Quantité dans le panier">{cartItem.quantity}</span>
-          <button className="btnQuantity" aria-label="Augmenter quantité" onClick={() => {
-            increaseQuantity(cartItem.id)
-          }}>+</button>
-        </div>
-        <span className={style.itemPrice} aria-label="Prix de l'article">{cartItem.price}€</span>
-      </li>
-    )
-  })
+	return (
+		<>
+			<div className={style.wrapper}>
+				<main className={style.cart + " " + "maxWrapper"}>
+					<h1 className="title">Panier</h1>
 
-    return (
-      <>
-        
-        <div className={style.wrapper}>
+					<ul className={style.items}>{cartList}</ul>
 
-          <main className={style.cart + " " + "maxWrapper"}>
+					<div className={style.sum}>
+						<span id="sum-label">Sous-total</span>
+						<span aria-aria-labelledby="sum-label">517€</span>
+					</div>
 
-            <h1 className="title">Panier</h1>
+					<button className={"btn primary" + " " + style.btnNext}>
+						Renseigner l'adresse
+					</button>
+				</main>
+			</div>
 
-            <ul className={style.items}>
-
-              {cartList}
-
-            </ul>
-
-            <div className={style.sum}>
-              <span id="sum-label">Sous-total</span>
-              <span aria-aria-labelledby="sum-label">517€</span>
-            </div>
-
-            <button className={"btn primary" + " " + style.btnNext}>Renseigner l'adresse</button>
-
-          </main>
-          
-        </div>
-        
-        <Banner />  
-      </>
-    )
-  }
+			<Banner />
+		</>
+	);
+}
