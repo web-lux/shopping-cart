@@ -35,7 +35,7 @@ export default function Cart() {
 
 					<div className={style.sum}>
 						<span id="sum-label">Sous-total</span>
-						<span aria-aria-labelledby="sum-label">{parsePrice(total)}€</span>
+						<span aria-labelledby="sum-label">{parsePrice(total)}€</span>
 					</div>
 
 					<button className={"btn primary" + " " + style.btnNext}>
