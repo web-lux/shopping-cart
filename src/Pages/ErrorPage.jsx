@@ -7,8 +7,7 @@ export default function ErrorPage() {
 			<main>
 				<h1>404</h1>
 				<p>
-					La page demandée n'existe pas.{" "}
-					<Link to="/">Retourner à l'index ?</Link>
+					La page demandée n'existe pas. <Link to="/">Retourner à l'index ?</Link>
 				</p>
 			</main>
 		</div>
