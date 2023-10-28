@@ -1,10 +1,10 @@
 import { useState } from "react";
 import style from "./Details.module.scss";
-
 import { redirect, useOutletContext, useParams } from "react-router-dom";
+import parsePrice from "/src/Utils/parsePrice.jsx";
 
 export default function Details() {
-	const { products, setCart, cart, parsePrice } = useOutletContext();
+	const { products, setCart, cart } = useOutletContext();
 	const { id } = useParams();
 
 	if (!products.some((item) => item.id == id)) {

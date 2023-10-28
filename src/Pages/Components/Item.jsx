@@ -1,9 +1,10 @@
 import style from "./Item.module.scss";
 import { Link } from "react-router-dom";
 import { useOutletContext } from "react-router-dom";
+import parsePrice from "/src/Utils/parsePrice.jsx";
 
 export default function Item({ product }) {
-	const { setCart, cart, parsePrice } = useOutletContext();
+	const { setCart, cart } = useOutletContext();
 
 	function addToCart() {
 		if (!cart.some((item) => item.id === product.id)) {
