@@ -35,7 +35,7 @@ function CartRow({ cartItem, cart, setCart }) {
 
 	return (
 		<li className={style.cartRow}>
-			<img src="src/assets/payplug.png" alt="" />
+			<img src={cartItem.image} alt="Image de l'article" />
 			<span className={style.itemName} aria-label="Nom de l'article">
 				{cartItem.title}
 			</span>
