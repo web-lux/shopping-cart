@@ -11,17 +11,14 @@ export default function Header({ cart }) {
 					<ul>
 						<li>
 							<Link to="/" className="borderBottom">
-								Accueil
+								Nos produits
 							</Link>
 						</li>
 						<li>
-							<Link to="/">Nos produits</Link>
+							<a>Qui sommes nous ?</a>
 						</li>
 						<li>
-							<Link to="/">Qui sommes nous ?</Link>
-						</li>
-						<li>
-							<Link to="/">F.A.Q</Link>
+							<a>F.A.Q</a>
 						</li>
 					</ul>
 				</nav>
@@ -31,9 +28,9 @@ export default function Header({ cart }) {
 						<div className={style.cartNumber}>{cart.length}</div>
 						<img src="/src/assets/basket.svg" alt="Panier" />
 					</Link>
-					<Link to="/" aria-label="Compte">
+					<a aria-label="Compte">
 						<img src="/src/assets/account.svg" alt="Compte" />
-					</Link>
+					</a>
 				</div>
 			</div>
 		</header>
