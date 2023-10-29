@@ -6,13 +6,29 @@ li.cartRow {
 	gap: 50px;
 	flex-wrap: wrap;
 
+	@media screen and (max-width: 768px) {
+		flex-direction: column;
+
+		.itemQuantity,
+		.itemPrice {
+			flex-basis: 0px !important;
+		}
+
+		.itemQuantity {
+			width: 150px;
+		}
+	}
+
 	span {
 		color: var(--black);
 		font-weight: bold;
 	}
 
 	img {
-		width: 45px;
+		width: 75px;
+		height: 75px;
+		object-fit: cover;
+		border-radius: 15px;
 	}
 
 	.itemName {
@@ -20,7 +36,7 @@ li.cartRow {
 	}
 
 	.itemQuantity {
-		flex-basis: 85px;
+		flex-basis: 100px;
 		flex-grow: 0;
 		flex-shrink: 0;
 		display: flex;
@@ -28,7 +44,7 @@ li.cartRow {
 	}
 
 	.itemPrice {
-		flex-basis: 50px;
+		flex-basis: 100px;
 		flex-grow: 0;
 		flex-shrink: 0;
 		text-align: right;
