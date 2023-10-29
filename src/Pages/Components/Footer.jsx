@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import style from "./Footer.module.scss";
 import facebookImg from "../../assets/facebook.svg";
 import pinterestImg from "../../assets/pinterest.svg";
