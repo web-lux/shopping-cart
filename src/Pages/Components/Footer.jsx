@@ -2,6 +2,10 @@ import { Link } from "react-router-dom";
 import style from "./Footer.module.scss";
 
 export default function Footer() {
+	function handleSubmit(e) {
+		e.preventDefault();
+	}
+
 	return (
 		<footer className={style.footer}>
 			<div className={"maxWrapper" + " " + style.wrapper}>
@@ -9,9 +13,7 @@ export default function Footer() {
 					<section className={style.form}>
 						<form action="POST">
 							<label htmlFor="email">
-								Inscrivez-vous à la newsletter pour des{" "}
-								<strong>nouveautés</strong> et des{" "}
-								<strong>offres exclusives</strong> :
+								Inscrivez-vous à la newsletter pour des <strong>nouveautés</strong> et des <strong>offres exclusives</strong> :
 							</label>
 
 							<div className={style.inputEmail}>
@@ -22,16 +24,16 @@ export default function Footer() {
 									placeholder="adresse de messagerie"
 								/>
 								<div className="borderBottom">
-									<button>Je m'abonne</button>
+									<button type="submit" onClick={(e) => handleSubmit(e)}>Je m'abonne</button>
 								</div>
 							</div>
 
 							<div className={style.inputRgpd}>
 								<label htmlFor="rgpd">
 									J’accepte les{" "}
-									<Link to="/">conditions de confidentitalité</Link>
+									<a>conditions de confidentitalité</a>
 								</label>
-								<input type="checkbox" name="rgpd" id="rgpd" />
+								<input type="checkbox" name="rgpd" id="rgpd" required />
 							</div>
 						</form>
 					</section>
@@ -40,22 +42,22 @@ export default function Footer() {
 						<nav aria-label="Navigation du pied-de-page">
 							<ul>
 								<li>
-									<Link to="/">Politique de confidentitalité</Link>
+									<a>Politique de confidentitalité</a>
 								</li>
 								<li>
-									<Link to="/">Conditions générales de vente</Link>
+									<a>Conditions générales de vente</a>
 								</li>
 								<li>
-									<Link to="/">Mentions légales</Link>
+									<a>Mentions légales</a>
 								</li>
 							</ul>
 						</nav>
 					</section>
 
 					<section>
-						<Link to="/" className="borderBottom">
+						<a className="borderBottom">
 							Nous contacter
-						</Link>
+						</a>
 					</section>
 
 					<section className={style.socials}>
@@ -63,22 +65,22 @@ export default function Footer() {
 							<nav aria-label="Où nous trouver sur les réseaux sociaux">
 								<ul>
 									<li>
-										<Link to="/">
+										<a>
 											<img
 												src="/src/assets/pinterest.svg"
 												alt="Logo Pinterest"
 											/>
-										</Link>
+										</a>
 									</li>
 									<li>
-										<Link to="/">
+										<a>
 											<img src="/src/assets/twitter.svg" alt="Logo Twitter" />
-										</Link>
+										</a>
 									</li>
 									<li>
-										<Link to="/">
+										<a>
 											<img src="/src/assets/facebook.svg" alt="Logo Facebook" />
-										</Link>
+										</a>
 									</li>
 								</ul>
 							</nav>
