@@ -1,11 +1,15 @@
 import { Link } from "react-router-dom";
 import style from "./Header.module.scss";
+import logoImg from "../../assets/runzik.svg";
+import cartImg from "../../assets/basket.svg";
+import accountImg from "../../assets/account.svg";
 
 export default function Header({ cart }) {
 	return (
 		<header className={style.navbar}>
 			<div className={style.wrapper + " " + "maxWrapper"}>
-				<img src="/src/assets/runzik.svg" alt="Logo Run'zik" />
+				<img src={logoImg} alt="Logo Run'zik" />
+
 
 				<nav aria-label="Navigation principale">
 					<ul>
@@ -26,10 +30,10 @@ export default function Header({ cart }) {
 				<div className={style.icons}>
 					<Link to="/cart" aria-label="Panier" className={style.cart}>
 						<div className={style.cartNumber}>{cart.length}</div>
-						<img src="/src/assets/basket.svg" alt="Panier" />
+						<img src={cartImg} alt="Panier" />
 					</Link>
 					<a aria-label="Compte">
-						<img src="/src/assets/account.svg" alt="Compte" />
+						<img src={accountImg} alt="Compte" />
 					</a>
 				</div>
 			</div>

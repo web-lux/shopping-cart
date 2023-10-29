@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
 import style from "./Footer.module.scss";
+import facebookImg from "../../assets/facebook.svg";
+import pinterestImg from "../../assets/pinterest.svg";
+import twitterImg from "../../assets/twitter.svg";
+import payplugImg from "../../assets/payplug.png";
 
 export default function Footer() {
 	function handleSubmit(e) {
@@ -67,26 +71,26 @@ export default function Footer() {
 									<li>
 										<a>
 											<img
-												src="/src/assets/pinterest.svg"
+												src={pinterestImg}
 												alt="Logo Pinterest"
 											/>
 										</a>
 									</li>
 									<li>
 										<a>
-											<img src="/src/assets/twitter.svg" alt="Logo Twitter" />
+											<img src={twitterImg} alt="Logo Twitter" />
 										</a>
 									</li>
 									<li>
 										<a>
-											<img src="/src/assets/facebook.svg" alt="Logo Facebook" />
+											<img src={facebookImg} alt="Logo Facebook" />
 										</a>
 									</li>
 								</ul>
 							</nav>
 						</div>
 						<img
-							src="/src/assets/payplug.png"
+							src={payplugImg}
 							alt="Logo PayPlug qui garantie un paiement sécurisé"
 						/>
 					</section>
