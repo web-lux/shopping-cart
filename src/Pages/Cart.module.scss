@@ -17,6 +17,13 @@
 		margin-bottom: -10px;
 	}
 
+	.content {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		min-height: 100px;
+	}
+
 	.items {
 		display: flex;
 		flex-direction: column;
