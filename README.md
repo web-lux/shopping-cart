@@ -7,9 +7,10 @@ Gestion du panier d'un site d'e-commerce fictif réalisée dans le cadre de l'[O
 ![Gif de l'application](runzik.gif)
 
 - La page d'accueil affiche deux articles de l'API Fake Store.
-- De là, l'utilisateur peut directement mettre l'article dans son panier ou consulter ses détails. 
+- De là, l'utilisateur peut directement mettre l'article dans son panier ou consulter ses détails.
 - Sur la page détaillée de l'article, il peut choisir le nombre d'exemplaires à mettre dans son panier.
-- Du panier, il peut choisir de réduire ou d'augmenter la quantité d'un même article dans son panier.
+- Une petite bulle au coin extérieur droit du panier indique le nombre de différents articles y figurant.
+- De la page panier, l'utilisateur peut choisir de réduire ou d'augmenter la quantité d'un même article dans son panier.
 - S'il réduit le nombre d'un article à 0, cet article est automatiquement supprimé de son panier.
 - À chaque fois qu'il modifie le nombre d'articles dans son panier, le prix affiché est modifié en conséquence.
 
