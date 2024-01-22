@@ -4,7 +4,7 @@
 
 Gestion du panier d'un site d'e-commerce fictif réalisée dans le cadre de l'[Odin Project](https://www.theodinproject.com/lessons/node-path-react-new-shopping-cart) pour pratiquer React et React Router. Les articles en vente sont tirés de l'API [Fake Store](https://fakestoreapi.com/).
 
-![Gif de l'application](preview.gif)
+![Gif de l'application](runzik.gif)
 
 - La page d'accueil affiche deux articles de l'API Fake Store.
 - De là, l'utilisateur peut directement mettre l'article dans son panier ou consulter ses détails. 
